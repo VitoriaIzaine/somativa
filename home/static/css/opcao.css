@@ -1,0 +1,38 @@
+.button {
+			  border: none;
+			  color: white;
+			  padding: 16px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  transition-duration: 0.4s;
+			  cursor: pointer;
+			}
+
+			.button2 {
+			  background-color: white;
+			  color: black;
+			  border: 2px solid #008CBA;
+			  width:150px;
+			}
+
+			.button2:hover {
+			  background-color: #008CBA;
+			  color: white;
+			 }
+
+			body {
+				height: 10em;
+				position: relative
+			}
+
+			#sou {
+				margin: 0;
+				position: absolute;
+				top: 200%;
+				left: 50%;
+				margin-right: -50%;
+				transform: translate(-50%, -50%) }
+			}

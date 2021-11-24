@@ -1,0 +1,87 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Cadastrar</title>
+</head>
+
+<body>
+{% include 'menu.html' %}
+<div
+        class="container"
+        style="
+        max-width: 600px;
+        min-height: 500px;
+        border: solid 1px #ccc;
+        background-color: lightcoral;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-top: 8rem;
+      "
+>
+    <h2>Cadastro</h2>
+    {% include 'msg.html' %}
+    <form
+            style="
+          width: 100%;
+          color: black;
+          background-color: lightcoral;
+          border-radius: 8px;
+          margin-top: 25px;
+        "
+            action="{% url 'cadastrar' %}"
+            method="post"
+    >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Nome Completo</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    name="nome"
+                    value="{{ request.POST.nome }}"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    value="{{ request.POST.email }}"
+            />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Usuário</label>
+            <input
+                    type="text"
+                    class="form-control"
+                    name="usuario"
+                    value="{{ request.POST.usuario }}"
+            />
+        </div>
+        <h6>Eu sou...</h6>
+        <input type="radio" id="html" name="tipo" value="Medico">
+        <label for="html">Medico</label><br>
+        <input type="radio" id="javascript" name="tipo" value="Paciente">
+        <label for="javascript">Paciente</label>
+        <br><br>
+
+        <div class="mb-3">
+            <label class="form-label">Senha</label>
+            <input type="password" class="form-control" name="senha1"/>
+        </div>
+        <button type="submit" class="btn btn-dark">Cadastrar</button>
+    </form>
+</div>
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+</body>
+</html>
